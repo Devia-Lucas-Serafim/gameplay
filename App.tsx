@@ -6,6 +6,7 @@ import { StatusBar } from 'react-native';
 import { useFonts } from 'expo-font';
 
 import { Background } from './src/components/Background';
+import { AuthProvider } from './src/hooks/auth';
 import { Routes } from './src/routes';
 
 export default function App() {
@@ -27,7 +28,9 @@ export default function App() {
           backgroundColor='transparent'
           translucent
         />
-      <Routes/>
+      <AuthProvider>
+        <Routes/>
+      </AuthProvider>
     </Background>
   )
 }
